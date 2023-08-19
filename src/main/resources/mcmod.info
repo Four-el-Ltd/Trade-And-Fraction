@@ -9,7 +9,7 @@
   "updateUrl": "",
   "authorList": ["Rusla,Vitya2127,Kir2100"],
   "credits": "Many thanks to Ruslanllll and Vitya",
-  "logoFile": "",
+  "logoFile": "assets/wradar/textures/logo.png",
   "screenshots": [],
   "dependencies": []
 }
