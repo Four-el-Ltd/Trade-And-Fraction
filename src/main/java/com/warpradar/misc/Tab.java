@@ -1,13 +1,15 @@
 package com.warpradar.misc;
 
+import com.warpradar.main.WarpRadar;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 public class Tab extends CreativeTabs {
   private Item icon;
 
-  public Tab(int i, String i2, Item icon) {
-    super(i, i2);
+  public Tab(Item icon) {
+    super(WarpRadar.MODID);
     this.icon = icon;
   }
 

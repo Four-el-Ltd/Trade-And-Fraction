@@ -5,11 +5,15 @@ import java.util.HashMap;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.inventory.fluid.tank.FluidTank;
+import com.hbm.items.machine.IItemFluidIdentifier;
 import com.hbm.tileentity.TileEntityLoadedBase;
 import com.hbm.tileentity.TileEntityMachineBase;
 
 import api.hbm.fluid.IFluidStandardReceiver;
 import api.hbm.fluid.IFluidStandardTransceiver;
+import net.minecraft.block.BlockContainer;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
@@ -35,7 +39,9 @@ public class TileEntityConverter extends TileEntityMachineBase implements IFluid
 
   @Override
   public void updateEntity() {
+
     if (!worldObj.isRemote) {
+      bobtank.setType(0, slots);
       if (hasEnoughtBobFluid() && FluidMap.containsKey(bobtank.getTankType())
           && forgetank.getFluid().amount < forgetank.getCapacity()
           && forgetank.getFluid().getFluid() == FluidMap.get(bobtank.getTankType())
