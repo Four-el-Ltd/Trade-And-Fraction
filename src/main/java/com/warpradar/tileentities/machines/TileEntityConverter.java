@@ -34,7 +34,7 @@ public class TileEntityConverter extends TileEntityMachineBase implements IFluid
 
   @Override
   public String getName() {
-    return "container.fluidconverter";
+    return "tile.fluidconverter";
   }
 
   @Override
