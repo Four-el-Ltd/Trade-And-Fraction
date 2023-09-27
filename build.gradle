@@ -11,9 +11,10 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.0"
+version = "0.0.1"
 group= "com.warpradar" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "warpradar"
+compileJava.options.encoding = 'UTF-8'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
