@@ -7,8 +7,12 @@
   "mcversion": "1.7.10",
   "url": "https://github.com/Ruslanllll/WarpRadar",
   "updateUrl": "",
-  "authorList": ["§9Rusla§r,§dVitya2127§r,§9Kir2100§r"],
-  "credits": "Many thanks to Ruslanllll and Vitya",
+  "authorList": [
+  "Ruslan",
+  "Vitya2127",
+  "Kir2100"
+  ],
+  "credits": "${credits}",
   "logoFile": "assets/wradar/textures/logo.png",
   "screenshots": [],
   "dependencies": []
