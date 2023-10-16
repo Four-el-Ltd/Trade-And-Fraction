@@ -1,7 +1,9 @@
 package com.warpradar.registry;
 
 import com.hbm.inventory.fluid.Fluids;
+import com.hbm.saveddata.satellites.Satellite;
 import com.warpradar.misc.Tab;
+import com.warpradar.misc.satellites.luchik;
 import com.warpradar.tileentities.machines.TileEntityConverter;
 
 import net.minecraft.init.Items;
@@ -12,5 +14,9 @@ public class MainRegistry {
 
   public static void regFluidMap() {
     TileEntityConverter.FluidMap.put(Fluids.STEAM, FluidRegistry.getFluid("steam"));
+  }
+
+  public static void regSatellites() {
+    Satellite.registerSatellite(luchik.class, ModItems.sat_luchik);
   }
 }
