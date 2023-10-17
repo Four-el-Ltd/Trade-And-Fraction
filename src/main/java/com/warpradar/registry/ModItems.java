@@ -15,5 +15,6 @@ public class ModItems {
 
   public static void registerItems() {
     GameRegistry.registerItem(bottle_leninade, bottle_leninade.getUnlocalizedName());
+    GameRegistry.registerItem(sat_luchik, sat_luchik.getUnlocalizedName());
   }
 }

@@ -2,6 +2,7 @@ package com.warpradar.main;
 
 import net.minecraft.init.Blocks;
 
+import com.warpradar.registry.MainRegistry;
 import com.warpradar.registry.ModItems;
 
 import cpw.mods.fml.common.Mod;
@@ -16,5 +17,6 @@ public class WarpRadar {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         ModItems.registerItems();
+        MainRegistry.regSatellites();
     }
 }
