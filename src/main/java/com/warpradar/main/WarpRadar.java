@@ -12,7 +12,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 @Mod(modid = WarpRadar.MODID, version = WarpRadar.VERSION, dependencies = "required-after:hbm")
 public class WarpRadar {
     public static final String MODID = "warpradar";
-    public static final String NAME = "Warp Radar"
+    public static final String NAME = "Warp Radar";
     public static final String VERSION = "0.0.2";
 
     @EventHandler
