@@ -10,7 +10,8 @@ import net.minecraft.init.Items;
 import net.minecraftforge.fluids.FluidRegistry;
 
 public class MainRegistry {
-  public static final Tab TestTab = new Tab(Items.diamond_horse_armor);
+  public static final Tab BlocksTab = new Tab(Items.diamond_horse_armor);
+  public static final Tab ItemsTab = new Tab(ModItems.bottle_leninade);
 
   public static void regFluidMap() {
     TileEntityConverter.FluidMap.put(Fluids.STEAM, FluidRegistry.getFluid("steam"));
