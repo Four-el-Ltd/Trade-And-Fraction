@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 public class BlockConverter extends BlockContainer {
   public BlockConverter(Material mat) {
     super(mat);
-    setCreativeTab(MainRegistry.TestTab);
+    setCreativeTab(MainRegistry.BlocksTab);
   }
 
   @Override
