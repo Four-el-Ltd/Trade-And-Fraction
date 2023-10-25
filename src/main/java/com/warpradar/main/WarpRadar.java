@@ -1,7 +1,5 @@
 package com.warpradar.main;
 
-import net.minecraft.init.Blocks;
-
 import com.warpradar.registry.MainRegistry;
 import com.warpradar.registry.ModItems;
 
@@ -10,6 +8,7 @@ import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Metadata;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = WarpRadar.MODID, name = WarpRadar.NAME, version = WarpRadar.VERSION, dependencies = "required-after:hbm")
@@ -36,5 +35,10 @@ public class WarpRadar {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+    }
+
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+
     }
 }
