@@ -6,7 +6,7 @@
   "version": "${version}",
   "mcversion": "1.7.10",
   "url": "https://github.com/Ruslanllll/WarpRadar",
-  "updateUrl": "",
+  "updateUrl": "https://github.com/Ruslanllll/WarpRadar/releases",
   "credits": "Ruslan (coder), Vitya2127 (artist, bad coder), Kir2100 (artist)",
   "logoFile": "assets/wradar/textures/logo.png",
   "screenshots": [],
