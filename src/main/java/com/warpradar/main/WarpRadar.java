@@ -23,6 +23,8 @@ public class WarpRadar {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        ModItems.registerItems();
+        MainRegistry.regSatellites();
         try {
             if (Class.forName("com.hfr.main.MainRegistry") != null) {
                 throw new IllegalStateException("xRadar is forbidden. Fuck you");
@@ -34,7 +36,5 @@ public class WarpRadar {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        ModItems.registerItems();
-        MainRegistry.regSatellites();
     }
 }
