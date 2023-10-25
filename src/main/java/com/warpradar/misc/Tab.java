@@ -8,8 +8,8 @@ import net.minecraft.item.Item;
 public class Tab extends CreativeTabs {
   private Item icon;
 
-  public Tab(Item icon) {
-    super(WarpRadar.MODID);
+  public Tab(Item icon, String name) {
+    super(name);
     this.icon = icon;
   }
 
