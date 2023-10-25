@@ -6,7 +6,9 @@ import com.warpradar.registry.MainRegistry;
 import com.warpradar.registry.ModItems;
 
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Metadata;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
@@ -15,6 +17,9 @@ public class WarpRadar {
     public static final String MODID = "warpradar";
     public static final String NAME = "Warp Radar";
     public static final String VERSION = "0.0.2";
+
+    @Metadata
+    public static ModMetadata meta;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
