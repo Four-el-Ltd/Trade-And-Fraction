@@ -25,7 +25,7 @@ public class WarpRadar {
     public void preInit(FMLPreInitializationEvent event) {
         try {
             if (Class.forName("com.hfr.main.MainRegistry") != null) {
-                throw new IllegalStateException("Пидор ебанный");
+                throw new IllegalStateException("xRadar is forbidden. Fuck you");
             }
         } catch (ClassNotFoundException e) {
 
