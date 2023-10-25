@@ -1,18 +1,15 @@
 // переведено Vitya2127
 
 // Groups
-itemGroup.warpradar=Блоки Warp Radar
-
-//itemGroup.tabBlocks
-//itemGroup.tabItems
-//itemGroup.tabMachines
+itemGroup.warpradar.BlocksTab=Блоки Warp Radar
+itemGroup.warpradar.itemsTab=Предметы Warp Radar
 
 // Items
 item.sat_luchik.name=Экспериментальный спутник "Лучик"
 item.bottle_leninade.name=Ленинад
-item.bottle_leninade.desc=Вкус советского производства
 
 // Descs
+item.bottle_leninade.desc=Вкус советского производства
 
 // Tiles
 
