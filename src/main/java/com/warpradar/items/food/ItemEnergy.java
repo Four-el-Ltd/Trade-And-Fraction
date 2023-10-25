@@ -17,6 +17,7 @@ public class ItemEnergy extends com.hbm.items.food.ItemEnergy {
   private boolean requiresOpener = false;
 
   public ItemEnergy() {
+    super();
     this.setCreativeTab(MainRegistry.ItemsTab); // TODO: Изменить на вкладку с расходниками
   }
 

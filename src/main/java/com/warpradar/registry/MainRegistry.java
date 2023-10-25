@@ -10,8 +10,16 @@ import net.minecraft.init.Items;
 import net.minecraftforge.fluids.FluidRegistry;
 
 public class MainRegistry {
-  public static final Tab BlocksTab = new Tab(Items.diamond_horse_armor);
-  public static final Tab ItemsTab = new Tab(ModItems.bottle_leninade);
+  public static void register() {
+    regFluidMap();
+    regSatellites();
+    ModItems.registerItems();
+    ModBlocks.registerBlocks();
+    regTabs();
+  }
+
+  public static Tab BlocksTab;
+  public static Tab ItemsTab;
 
   public static void regFluidMap() {
     TileEntityConverter.FluidMap.put(Fluids.STEAM, FluidRegistry.getFluid("steam"));
@@ -19,5 +27,10 @@ public class MainRegistry {
 
   public static void regSatellites() {
     Satellite.registerSatellite(luchik.class, ModItems.sat_luchik);
+  }
+
+  public static void regTabs() {
+    BlocksTab = new Tab(Items.diamond_horse_armor);
+    ItemsTab = new Tab(ModItems.bottle_leninade);
   }
 }
