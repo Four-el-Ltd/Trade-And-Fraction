@@ -40,6 +40,7 @@ public class MainRegistry {
 
   public static void regFluidMap() {
     TileEntityConverter.FluidMap.put(Fluids.STEAM, FluidRegistry.getFluid("steam"));
+    TileEntityConverter.FluidMap.put(Fluids.WATER, FluidRegistry.WATER);
   }
 
   public static void regSatellites() {
