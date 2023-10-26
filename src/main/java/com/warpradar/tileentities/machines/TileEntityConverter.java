@@ -44,7 +44,7 @@ public class TileEntityConverter extends TileEntityLoadedBase implements IFluidS
 
     if (!worldObj.isRemote && bobtank.getTankType() != Fluids.NONE) {
       if (FluidMap.containsKey(bobtank.getTankType())
-          && forgetank.getFluid().amount < forgetank.getCapacity()) {
+          && forgetank.getFluidAmount() < forgetank.getCapacity()) {
         if (forgetank.getFluid() == null) {
 
         } else if (forgetank.getFluid().getFluid() == FluidMap.get(bobtank.getTankType())) {
