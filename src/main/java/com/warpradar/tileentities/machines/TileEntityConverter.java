@@ -40,15 +40,15 @@ public class TileEntityConverter extends TileEntityMachineBase implements IFluid
   @Override
   public void updateEntity() {
 
-    if (!worldObj.isRemote) {
-      bobtank.setType(0, slots);
+    if (!worldObj.isRemote && bobtank.getTankType() != Fluids.NONE) {
       if (hasEnoughtBobFluid() && FluidMap.containsKey(bobtank.getTankType())
           && forgetank.getFluid().amount < forgetank.getCapacity()
-          && forgetank.getFluid().getFluid() == FluidMap.get(bobtank.getTankType())
-          || forgetank.getFluid().getFluid() == null) {
-        bobtank.setFill(bobtank.getFill() - 1000);
-        FluidStack a = new FluidStack(FluidMap.get(bobtank.getTankType()), 1000);
-        forgetank.fill(a, true);
+          && (forgetank.getFluid().getFluid() == FluidMap.get(bobtank.getTankType())
+              || forgetank.getFluid().getFluid() == null)) {
+        int amount = Math.min(forgetank.getCapacity() - forgetank.getFluidAmount(), bobtank.getFill());
+        bobtank.setFill(bobtank.getFill() - amount);
+        FluidStack fluidStack = new FluidStack(FluidMap.get(bobtank.getTankType()), amount);
+        forgetank.fill(fluidStack, true);
       }
     }
   }

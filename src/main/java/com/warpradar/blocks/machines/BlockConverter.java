@@ -25,12 +25,13 @@ public class BlockConverter extends BlockContainer {
   public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float fX, float fY,
       float fZ) {
     TileEntity te = world.getTileEntity(x, y, z);
-    if (player.getHeldItem().getItem() instanceof IItemFluidIdentifier && te instanceof TileEntityConverter) {
+    if (player.getHeldItem() != null && player.getHeldItem().getItem() instanceof IItemFluidIdentifier
+        && te instanceof TileEntityConverter) {
       IItemFluidIdentifier id = (IItemFluidIdentifier) player.getHeldItem().getItem();
       TileEntityConverter tec = (TileEntityConverter) te;
       tec.bobtank.setTankType(id.getType(world, x, y, z, player.getHeldItem()));
       return true;
     }
-    return false;
+    return true;
   }
 }
