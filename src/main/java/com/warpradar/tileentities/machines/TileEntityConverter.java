@@ -44,8 +44,14 @@ public class TileEntityConverter extends TileEntityLoadedBase implements IFluidS
 
     if (!worldObj.isRemote && bobtank.getTankType() != Fluids.NONE) {
       if (FluidMap.containsKey(bobtank.getTankType())
-          && forgetank.getFluid().amount < forgetank.getCapacity()
-          && (forgetank.getFluid() == null || forgetank.getFluid().getFluid() == FluidMap.get(bobtank.getTankType()))) {
+          && forgetank.getFluid().amount < forgetank.getCapacity()) {
+        if (forgetank.getFluid() == null) {
+
+        } else if (forgetank.getFluid().getFluid() == FluidMap.get(bobtank.getTankType())) {
+
+        } else {
+          return;
+        }
         int amount = Math.min(forgetank.getCapacity() - forgetank.getFluidAmount(), bobtank.getFill());
         bobtank.setFill(bobtank.getFill() - amount);
         FluidStack fluidStack = new FluidStack(FluidMap.get(bobtank.getTankType()), amount);
