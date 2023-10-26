@@ -21,22 +21,23 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTankInfo;
 import net.minecraftforge.fluids.IFluidHandler;
 
-public class TileEntityConverter extends TileEntityMachineBase implements IFluidStandardReceiver, IFluidHandler {
+public class TileEntityConverter extends TileEntityLoadedBase implements IFluidStandardReceiver, IFluidHandler {
   public static HashMap<FluidType, Fluid> FluidMap = new HashMap<>();
 
   public FluidTank bobtank;
   public net.minecraftforge.fluids.FluidTank forgetank;
 
   public TileEntityConverter() {
-    super(0);
     bobtank = new FluidTank(Fluids.NONE, 12000);
     forgetank = new net.minecraftforge.fluids.FluidTank(12000);
   }
 
-  @Override
-  public String getName() {
-    return "tile.fluidconverter";
-  }
+  /*
+   * @Override
+   * public String getName() {
+   * return "tile.fluidconverter";
+   * }
+   */
 
   @Override
   public void updateEntity() {
@@ -51,8 +52,6 @@ public class TileEntityConverter extends TileEntityMachineBase implements IFluid
         FluidStack fluidStack = new FluidStack(FluidMap.get(bobtank.getTankType()), amount);
         forgetank.fill(fluidStack, true);
       }
-      NBTTagCompound data = new NBTTagCompound();
-      bobtank.writeToNBT(data, "tank1");
       this.subscribeToAllAround(bobtank.getTankType(), this);
     }
   }
