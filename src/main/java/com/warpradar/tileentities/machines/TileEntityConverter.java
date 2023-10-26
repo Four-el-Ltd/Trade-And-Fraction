@@ -50,6 +50,7 @@ public class TileEntityConverter extends TileEntityMachineBase implements IFluid
         FluidStack fluidStack = new FluidStack(FluidMap.get(bobtank.getTankType()), amount);
         forgetank.fill(fluidStack, true);
       }
+      this.subscribeToAllAround(bobtank.getTankType(), this);
     }
   }
 
