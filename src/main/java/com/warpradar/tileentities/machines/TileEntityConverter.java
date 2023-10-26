@@ -51,6 +51,8 @@ public class TileEntityConverter extends TileEntityMachineBase implements IFluid
         FluidStack fluidStack = new FluidStack(FluidMap.get(bobtank.getTankType()), amount);
         forgetank.fill(fluidStack, true);
       }
+      NBTTagCompound data = new NBTTagCompound();
+      bobtank.writeToNBT(data, "tank1");
       this.subscribeToAllAround(bobtank.getTankType(), this);
     }
   }
@@ -107,15 +109,15 @@ public class TileEntityConverter extends TileEntityMachineBase implements IFluid
   @Override
   public void readFromNBT(NBTTagCompound nbt) {
     super.readFromNBT(nbt);
-    this.bobtank.readFromNBT(nbt, "tank1");
-    this.forgetank.readFromNBT(nbt);
+    bobtank.readFromNBT(nbt, "tank1");
+    forgetank.readFromNBT(nbt);
   }
 
   @Override
   public void writeToNBT(NBTTagCompound nbt) {
     super.writeToNBT(nbt);
-    this.bobtank.writeToNBT(nbt, "tank1");
-    this.forgetank.writeToNBT(nbt);
+    bobtank.writeToNBT(nbt, "tank1");
+    forgetank.writeToNBT(nbt);
   }
 
 }
