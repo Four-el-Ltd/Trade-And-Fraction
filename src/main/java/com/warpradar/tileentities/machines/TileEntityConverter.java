@@ -108,12 +108,14 @@ public class TileEntityConverter extends TileEntityMachineBase implements IFluid
   public void readFromNBT(NBTTagCompound nbt) {
     super.readFromNBT(nbt);
     this.bobtank.readFromNBT(nbt, bobtank.getTankType().getUnlocalizedName());
+    this.forgetank.readFromNBT(nbt);
   }
 
   @Override
   public void writeToNBT(NBTTagCompound nbt) {
     super.writeToNBT(nbt);
     this.bobtank.writeToNBT(nbt, bobtank.getTankType().getUnlocalizedName());
+    this.forgetank.writeToNBT(nbt);
   }
 
 }
