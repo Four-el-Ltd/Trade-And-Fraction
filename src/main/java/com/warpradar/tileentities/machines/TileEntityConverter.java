@@ -43,10 +43,9 @@ public class TileEntityConverter extends TileEntityLoadedBase implements IFluidS
   public void updateEntity() {
 
     if (!worldObj.isRemote && bobtank.getTankType() != Fluids.NONE) {
-      if (hasEnoughtBobFluid() && FluidMap.containsKey(bobtank.getTankType())
+      if (FluidMap.containsKey(bobtank.getTankType())
           && forgetank.getFluid().amount < forgetank.getCapacity()
-          && (forgetank.getFluid().getFluid() == FluidMap.get(bobtank.getTankType())
-              || forgetank.getFluid().getFluid() == null)) {
+          && (forgetank.getFluid() == null || forgetank.getFluid().getFluid() == FluidMap.get(bobtank.getTankType()))) {
         int amount = Math.min(forgetank.getCapacity() - forgetank.getFluidAmount(), bobtank.getFill());
         bobtank.setFill(bobtank.getFill() - amount);
         FluidStack fluidStack = new FluidStack(FluidMap.get(bobtank.getTankType()), amount);
@@ -56,9 +55,11 @@ public class TileEntityConverter extends TileEntityLoadedBase implements IFluidS
     }
   }
 
-  private boolean hasEnoughtBobFluid() {
-    return bobtank.getFill() >= 1000;
-  }
+  /*
+   * private boolean hasEnoughtBobFluid() {
+   * return bobtank.getFill() >= 1000;
+   * }
+   */
 
   @Override
   public FluidTank[] getReceivingTanks() {
