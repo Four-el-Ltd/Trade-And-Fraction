@@ -7,7 +7,7 @@ import com.warpradar.tileentities.machines.TileEntityConverter;
 import net.minecraft.tileentity.TileEntity;
 
 public class TileMappings {
-  public static HashMap<Class<? extends TileEntity>, String[]> map;
+  public static HashMap<Class<? extends TileEntity>, String[]> map = new HashMap();
 
   public static void writeMappings() {
     put(TileEntityConverter.class, "tileentity_converter");
