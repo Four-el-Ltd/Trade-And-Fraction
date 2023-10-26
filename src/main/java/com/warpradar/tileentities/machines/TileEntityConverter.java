@@ -13,6 +13,7 @@ import api.hbm.fluid.IFluidStandardReceiver;
 import api.hbm.fluid.IFluidStandardTransceiver;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.Fluid;
@@ -101,6 +102,18 @@ public class TileEntityConverter extends TileEntityMachineBase implements IFluid
   @Override
   public boolean canDrain(ForgeDirection from, Fluid fluid) {
     return true;
+  }
+
+  @Override
+  public void readFromNBT(NBTTagCompound nbt) {
+    super.readFromNBT(nbt);
+    this.bobtank.readFromNBT(nbt, bobtank.getTankType().getUnlocalizedName());
+  }
+
+  @Override
+  public void writeToNBT(NBTTagCompound nbt) {
+    super.writeToNBT(nbt);
+    this.bobtank.writeToNBT(nbt, bobtank.getTankType().getUnlocalizedName());
   }
 
 }
