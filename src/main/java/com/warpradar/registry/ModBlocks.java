@@ -1,6 +1,7 @@
 package com.warpradar.registry;
 
 import com.hbm.blocks.generic.BlockConcreteColored;
+import com.hbm.blocks.generic.BlockGeneric;
 import com.warpradar.blocks.machines.BlockConverter;
 import com.warpradar.main.WarpRadar;
 
@@ -15,7 +16,7 @@ public class ModBlocks {
   public static void initializeBlocks() {
     converter = new BlockConverter(Material.iron).setBlockName("converter")
         .setBlockTextureName(WarpRadar.MODID + ":converter").setCreativeTab(MainRegistry.BlocksTab);
-    concrete_brick_legacy = new BlockConcreteColored(Material.iron).setBlockName("concrete_brick_legacy")
+    concrete_brick_legacy = new BlockGeneric(Material.iron).setBlockName("concrete_brick_legacy")
         .setBlockTextureName(WarpRadar.MODID + ":concrete_brick_legacy").setCreativeTab(MainRegistry.BlocksTab);
 
   }
