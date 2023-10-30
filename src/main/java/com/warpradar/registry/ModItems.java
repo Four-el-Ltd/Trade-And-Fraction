@@ -13,9 +13,9 @@ public class ModItems {
 
   public static void initializeItems() {
     bottle_leninade = new ItemEnergy().makeBottle(com.hbm.items.ModItems.bottle_empty, null)
-        .setUnlocalizedName("bottle_leninade").setTextureName(WarpRadar.MODID + ":bottle_leninade");
+        .setUnlocalizedName("bottle_leninade").setTextureName(WarpRadar.MODID + ":bottle_leninade").setCreativeTab(ItemsTab);
     sat_luchik = new ItemSatChip().setUnlocalizedName("sat_luchik").setMaxStackSize(1)
-        .setTextureName(WarpRadar.MODID + ":sat_luchik");
+        .setTextureName(WarpRadar.MODID + ":sat_luchik").setCreativeTab(ItemsTab);
   }
 
   public static void registerItems() {
