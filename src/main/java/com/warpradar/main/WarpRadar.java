@@ -1,7 +1,6 @@
 package com.warpradar.main;
 
 import com.warpradar.registry.MainRegistry;
-import com.warpradar.registry.ModItems;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.ModMetadata;

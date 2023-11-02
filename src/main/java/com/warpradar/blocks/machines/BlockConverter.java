@@ -1,6 +1,11 @@
 package com.warpradar.blocks.machines;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.hbm.blocks.ILookOverlay;
 import com.hbm.items.machine.IItemFluidIdentifier;
+import com.hbm.util.I18nUtil;
 import com.warpradar.registry.MainRegistry;
 import com.warpradar.tileentities.machines.TileEntityConverter;
 
@@ -9,8 +14,9 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import net.minecraftforge.client.event.RenderGameOverlayEvent.Pre;
 
-public class BlockConverter extends BlockContainer {
+public class BlockConverter extends BlockContainer implements ILookOverlay {
   public BlockConverter(Material mat) {
     super(mat);
     setCreativeTab(MainRegistry.BlocksTab);
@@ -33,5 +39,15 @@ public class BlockConverter extends BlockContainer {
       return true;
     }
     return true;
+  }
+
+  @Override
+  public void printHook(Pre preEvent, World world, int x, int y, int z) {
+    TileEntity te = world.getTileEntity(x, y, z);
+    TileEntityConverter tec = (TileEntityConverter) te;
+    List<String> text = new ArrayList<>();
+    text.add(tec.getAllTanks()[0].getTankType().getLocalizedName());
+    ILookOverlay.printGeneric(preEvent, I18nUtil.resolveKey(getUnlocalizedName() + ".text"), 0xffff00, 0x404000, text);
+
   }
 }
