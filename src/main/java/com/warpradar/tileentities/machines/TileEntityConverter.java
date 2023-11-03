@@ -5,21 +5,21 @@ import java.util.HashMap;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.inventory.fluid.tank.FluidTank;
-import com.hbm.items.machine.IItemFluidIdentifier;
 import com.hbm.tileentity.TileEntityLoadedBase;
-import com.hbm.tileentity.TileEntityMachineBase;
 
 import api.hbm.fluid.IFluidStandardReceiver;
-import api.hbm.fluid.IFluidStandardTransceiver;
-import net.minecraft.block.BlockContainer;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTankInfo;
 import net.minecraftforge.fluids.IFluidHandler;
+
+/**
+ * TileEntityConverter
+ * Класс сущности конвертера
+ * Здесь определено всё его поведение
+ */
 
 public class TileEntityConverter extends TileEntityLoadedBase implements IFluidStandardReceiver, IFluidHandler {
   public static HashMap<FluidType, Fluid> FluidMap = new HashMap<>();
@@ -32,13 +32,16 @@ public class TileEntityConverter extends TileEntityLoadedBase implements IFluidS
     forgetank = new net.minecraftforge.fluids.FluidTank(12000);
   }
 
-  /*
-   * @Override
-   * public String getName() {
-   * return "tile.fluidconverter";
-   * }
+  /**
+   * Метод обновления сущности
+   * вызывается каждый тик
+   * Реалищует всю логику сущности
+   *
+   * В данном случае:
+   * Снятие n-ого количества Бобовской жидкости если её больше нуля и существует
+   * форжевская жидкость соответствуюшая Бобовской
+   * Начисление аналогичного количества форжевской жидкости
    */
-
   @Override
   public void updateEntity() {
 
@@ -60,12 +63,6 @@ public class TileEntityConverter extends TileEntityLoadedBase implements IFluidS
       this.subscribeToAllAround(bobtank.getTankType(), this);
     }
   }
-
-  /*
-   * private boolean hasEnoughtBobFluid() {
-   * return bobtank.getFill() >= 1000;
-   * }
-   */
 
   @Override
   public FluidTank[] getReceivingTanks() {
@@ -112,6 +109,10 @@ public class TileEntityConverter extends TileEntityLoadedBase implements IFluidS
     return true;
   }
 
+  /**
+   * Данный метод при запуске мира/прогрузке чанков с сущностью считыввает ее
+   * данные из NBT
+   */
   @Override
   public void readFromNBT(NBTTagCompound nbt) {
     super.readFromNBT(nbt);
@@ -119,6 +120,9 @@ public class TileEntityConverter extends TileEntityLoadedBase implements IFluidS
     forgetank.readFromNBT(nbt);
   }
 
+  /**
+   * Данный метод каждый тик созраняет данные сущноати в NBT
+   */
   @Override
   public void writeToNBT(NBTTagCompound nbt) {
     super.writeToNBT(nbt);

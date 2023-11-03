@@ -27,6 +27,13 @@ public class BlockConverter extends BlockContainer implements ILookOverlay {
     return new TileEntityConverter();
   }
 
+  /**
+   * Данный мето вызывается при правом клике мышкой игроком
+   * Он выполняет следующие действия:
+   * Проверка на наличие жидкостного идентификатора в руке(в случае отсутствия
+   * метод завершается)
+   * Снятие типа жидкости с идентификатора сущности конвертера
+   */
   @Override
   public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float fX, float fY,
       float fZ) {
