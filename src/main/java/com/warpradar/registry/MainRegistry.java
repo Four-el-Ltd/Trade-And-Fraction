@@ -6,6 +6,7 @@ import com.hbm.inventory.fluid.Fluids;
 import com.hbm.saveddata.satellites.Satellite;
 import com.warpradar.main.WarpRadar;
 import com.warpradar.misc.Tab;
+import com.warpradar.misc.satellites.CumOne;
 import com.warpradar.misc.satellites.luchik;
 import com.warpradar.tileentities.machines.TileEntityConverter;
 
@@ -46,6 +47,7 @@ public class MainRegistry {
 
   public static void regSatellites() {
     Satellite.registerSatellite(luchik.class, ModItems.sat_luchik);
+    Satellite.registerSatellite(CumOne.class, ModItems.sat_cumone);
   }
 
   public static void regTabs() {
