@@ -16,9 +16,9 @@ public class luchik extends Satellite {
 
   @Override
   public void onCoordAction(World world, EntityPlayer player, int x, int y, int z) {
-    if (lastOp + 12000 < world.getTotalWorldTime()) {
+    if (lastOp + (10 * 60 * 1000) < System.currentTimeMillis()) {
       world.spawnEntityInWorld(EntityNukeExplosionMK5.statFacNoRad(world, 300, x, y, z));
-      lastOp = world.getTotalWorldTime();
+      lastOp = System.currentTimeMillis();
     }
 
   }
