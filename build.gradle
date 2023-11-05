@@ -1,29 +1,34 @@
 buildscript {
-    repositories {
-        mavenCentral()
-        maven {
-            name = "forge"
-            url = "http://files.minecraftforge.net/maven"
+        repositories {
+                maven { url = 'https://maven.minecraftforge.net/' }
+                maven { url = 'https://plugins.gradle.org/m2' }
+                maven { url = 'https://jitpack.io' }
+                mavenCentral()
         }
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        dependencies {
+                classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.0.+') {changing = true}
         }
-    }
-    dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
-    }
 }
 
 apply plugin: 'forge'
 
-version = "1.0"
-group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+version = "0.0.2"
+group= "com.warpradar" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "warpradar"
+compileJava.options.encoding = 'UTF-8'
+
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
 minecraft {
     version = "1.7.10-10.13.4.1614-1.7.10"
     runDir = "eclipse"
+}
+
+repositories {
+    maven {
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
 }
 
 dependencies {
@@ -35,7 +40,8 @@ dependencies {
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
+    compile files('libs/HBM-NTM-[1.0.27_X4746]-deobf.jar')
+    compile("com.github.LegacyModdingMC.UniMixins:unimixins-all-1.7.10:0.1.13:dev")
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html

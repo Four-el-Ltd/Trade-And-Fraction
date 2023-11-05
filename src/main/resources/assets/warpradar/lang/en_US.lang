@@ -1,0 +1,17 @@
+
+// Groups
+itemGroup.warpradar.BlocksTab=Blocks Warp Radar
+itemGroup.warpradar.itemsTab=Items Warp Radar
+
+// Items
+item.sat_luchik.name=Experimental satellite "Luchik"
+item.bottle_leninade.name=Leninade
+
+// Descs
+item.bottle_leninade.desc=Taste of Soviet production
+
+// Tiles
+
+// Containers
+
+// GUIs
