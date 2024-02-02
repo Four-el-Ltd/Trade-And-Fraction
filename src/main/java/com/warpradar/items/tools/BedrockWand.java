@@ -27,7 +27,8 @@ public class BedrockWand extends Item {
     }
     if (player.isSneaking()) {
       if (player.inventory.getStackInSlot(0) != null) {
-        stack.stackTagCompound.setInteger("id_target", Item.getIdFromItem(target.getItem()));
+        stack.stackTagCompound.setInteger("id_target",
+            Item.getIdFromItem(player.inventory.getStackInSlot(0).getItem()));
         if (world.isRemote) {
           player.addChatMessage(new ChatComponentText("Тип руды установлен на"
               + Item.getItemById(stack.stackTagCompound.getInteger("id_target")).getUnlocalizedName()));
