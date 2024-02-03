@@ -1,9 +1,9 @@
 [
 {
-  "modid": "wradar",
-  "name": "Warp Radar",
+  "modid": "${modId}",
+  "name": "${modName}",
   "description": "Remake of the xRadar mod.",
-  "version": "${version}",
+  "version": "${modVersion}",
   "mcversion": "1.7.10",
   "url": "https://github.com/Ruslanllll/WarpRadar",
   "updateUrl": "https://github.com/Ruslanllll/WarpRadar/releases",
