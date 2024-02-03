@@ -1,4 +1,4 @@
-arguments=--init-script /root/.cache/jdtls/config/org.eclipse.osgi/145/0/.cp/gradle/init/init.gradle
+arguments=--init-script /root/.local/share/nvim/mason/packages/jdtls/config_mac/org.eclipse.osgi/54/0/.cp/gradle/init/init.gradle
 auto.sync=false
 build.scans.enabled=false
 connection.gradle.distribution=GRADLE_DISTRIBUTION(WRAPPER)

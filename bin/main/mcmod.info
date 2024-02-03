@@ -1,0 +1,15 @@
+[
+{
+  "modid": "wradar",
+  "name": "Warp Radar",
+  "description": "Remake of the xRadar mod.",
+  "version": "${version}",
+  "mcversion": "1.7.10",
+  "url": "https://github.com/Ruslanllll/WarpRadar",
+  "updateUrl": "https://github.com/Ruslanllll/WarpRadar/releases",
+  "credits": "Ruslan (coder), Kir2100 (artist), MrKimkimora (Artist, coder)",
+  "logoFile": "assets/wradar/textures/logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
