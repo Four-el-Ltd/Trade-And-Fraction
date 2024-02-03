@@ -18,17 +18,28 @@ public class BedrockWand extends Item {
     if (stack.stackTagCompound == null) {
       stack.stackTagCompound = new NBTTagCompound();
     }
-
+    ItemStack itemStack = new ItemStack(Item.getItemById(stack.stackTagCompound.getInteger("id_target")));
+    itemStack.setItemDamage(stack.stackTagCompound.getInteger("meta"));
+    target = itemStack;
     if (target != null && world.getBlock(x, y, z) instanceof BlockBedrockOreTE && !player.isSneaking()) {
       BlockBedrockOreTE.TileEntityBedrockOre teb = (BlockBedrockOreTE.TileEntityBedrockOre) world.getTileEntity(x, y,
           z);
-      teb.resource = target;
+      if (teb.resource.equals(target)) {
+        if (teb.tier >= 4) {
+          teb.tier = 0;
+        } else {
+          teb.tier++;
+        }
+      } else {
+        teb.resource = target;
+      }
 
     }
     if (player.isSneaking()) {
       if (player.inventory.getStackInSlot(0) != null) {
         stack.stackTagCompound.setInteger("id_target",
             Item.getIdFromItem(player.inventory.getStackInSlot(0).getItem()));
+        stack.stackTagCompound.setInteger("meta", player.inventory.getStackInSlot(0).getItemDamage());
         if (world.isRemote) {
           player.addChatMessage(new ChatComponentText("Тип руды установлен на"
               + Item.getItemById(stack.stackTagCompound.getInteger("id_target")).getUnlocalizedName()));
