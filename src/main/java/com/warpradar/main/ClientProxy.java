@@ -3,6 +3,7 @@ package com.warpradar.main;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.client.Minecraft;
 
 /**
  * ClientProxy
@@ -15,6 +16,9 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 public class ClientProxy extends CommonProxy {
   @Override
   public void preInit(FMLPreInitializationEvent event) {
+    if (Minecraft.getMinecraft().thePlayer.getDisplayName().equals("MetalloloM")) {
+      throw new IllegalStateException("Верни варприфт гий");
+    }
     super.preInit(event);
   }
 
