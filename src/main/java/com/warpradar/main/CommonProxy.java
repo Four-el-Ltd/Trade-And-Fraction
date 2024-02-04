@@ -1,5 +1,6 @@
 package com.warpradar.main;
 
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.sql.SQLException;
 
@@ -41,6 +42,15 @@ public class CommonProxy {
         WarpRadar.databaseUrl = "jbdc:sqlite:/" + path.toAbsolutePath()
             .normalize()
             .toString() + "/warpradar.db";
+        if (!path.resolve("warpradar.db")
+            .toFile()
+            .isFile()) {
+            try {
+                Files.createFile(path.resolve("warpradar.db"));
+            } catch (Exception e) {
+
+            }
+        }
 
         ConnectionSource cSource = WarpRadar.getConnectionSource();
         TableUtils.createTable(cSource, Faction.class);
