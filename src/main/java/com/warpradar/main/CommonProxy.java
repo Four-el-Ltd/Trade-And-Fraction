@@ -39,7 +39,7 @@ public class CommonProxy {
     public void onServerStarting(FMLServerStartingEvent event) throws SQLException {
         Path path = DimensionManager.getCurrentSaveRootDirectory()
             .toPath();
-        WarpRadar.databaseUrl = "jbdc:sqlite:/" + path.toAbsolutePath()
+        WarpRadar.databaseUrl = "jdbc:sqlite:/" + path.toAbsolutePath()
             .normalize()
             .toString() + "/warpradar";
         if (!path.resolve("warpradar.db")

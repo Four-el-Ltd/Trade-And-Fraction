@@ -9,17 +9,24 @@ public class FlagPole extends TileEntityLoadedBase {
 
     @Override
     public void updateEntity() {
-        super.updateEntity();
+        if (!canSeeSky()) {
+            worldObj.getBlock(xCoord, yCoord, zCoord)
+                .breakBlock(worldObj, xCoord, yCoord, zCoord, null, 0);
+        }
     }
 
     @Override
     public void invalidate() {
-        super.invalidate();
+        super.invalidat();
     }
 
     @Override
     public void validate() {
         super.validate();
+    }
+
+    public boolean canSeeSky() {
+        return worldObj.canBlockSeeTheSky(xCoord, yCoord, zCoord);
     }
 
 }
