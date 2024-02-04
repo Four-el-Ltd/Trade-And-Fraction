@@ -41,7 +41,8 @@ public class CommonProxy {
             .resolve(
                 event.getServer()
                     .getEntityWorld()
-                    .getProviderName());
+                    .getWorldInfo()
+                    .getWorldName());
         WarpRadar.databaseUrl = "jbdc:sqlite:" + path.toString() + "/warpradar.db";
 
         ConnectionSource cSource = WarpRadar.getConnectionSource();
