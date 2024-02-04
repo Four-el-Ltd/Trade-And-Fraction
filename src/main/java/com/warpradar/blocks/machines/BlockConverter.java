@@ -38,12 +38,12 @@ public class BlockConverter extends BlockContainer implements ILookOverlay {
      */
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float fX, float fY,
-            float fZ) {
+        float fZ) {
         TileEntity te = world.getTileEntity(x, y, z);
         if (player.getHeldItem() != null && player.getHeldItem()
-                .getItem() instanceof IItemFluidIdentifier && te instanceof TileEntityConverter) {
+            .getItem() instanceof IItemFluidIdentifier && te instanceof TileEntityConverter) {
             IItemFluidIdentifier id = (IItemFluidIdentifier) player.getHeldItem()
-                    .getItem();
+                .getItem();
             TileEntityConverter tec = (TileEntityConverter) te;
             tec.bobtank.setTankType(id.getType(world, x, y, z, player.getHeldItem()));
             return true;
@@ -59,15 +59,14 @@ public class BlockConverter extends BlockContainer implements ILookOverlay {
         if (TileEntityConverter.FluidMap.get(tec.getAllTanks()[0].getTankType()) != null) {
 
             text.add(
-                    tec.getAllTanks()[0].getTankType()
-                            .getLocalizedName());
+                tec.getAllTanks()[0].getTankType()
+                    .getLocalizedName());
             ILookOverlay
-                    .printGeneric(preEvent, I18nUtil.resolveKey(getUnlocalizedName() + ".text"), 0xffff00, 0x404000,
-                            text);
+                .printGeneric(preEvent, I18nUtil.resolveKey(getUnlocalizedName() + ".text"), 0xffff00, 0x404000, text);
         } else {
             text.add(Fluids.NONE.getLocalizedName());
-            ILookOverlay.printGeneric(preEvent, I18nUtil.resolveKey(getUnlocalizedName() + ".text"), 0xffff00, 0x404000,
-                    text);
+            ILookOverlay
+                .printGeneric(preEvent, I18nUtil.resolveKey(getUnlocalizedName() + ".text"), 0xffff00, 0x404000, text);
         }
 
     }
