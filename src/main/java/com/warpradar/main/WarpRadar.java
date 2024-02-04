@@ -18,7 +18,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
 /**
  * WarpRadar
- * 
+ *
  * Главный класс мода
  * Здесь обрабаываются этапы запуска игры а также устанавливаются некотоыре
  * константы
@@ -28,7 +28,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
  * Метод init - Инициализация игры(начинается по окончанию пре-инициализации)
  * Метод postInit - пост-инициализация игры(начинаетчя по окончанию
  * инициализации)
- * 
+ *
  */
 
 @Mod(modid = WarpRadar.MODID, name = WarpRadar.NAME, version = WarpRadar.VERSION, dependencies = "required-after:hbm")
