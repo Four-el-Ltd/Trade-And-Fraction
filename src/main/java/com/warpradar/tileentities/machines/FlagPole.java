@@ -17,7 +17,7 @@ public class FlagPole extends TileEntityLoadedBase {
 
     @Override
     public void invalidate() {
-        super.invalidat();
+        super.invalidate();
     }
 
     @Override
