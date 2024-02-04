@@ -8,11 +8,11 @@ import net.minecraft.block.material.Material;
  */
 public class FlagPole extends Block {
 
-  /**
-   * @param material
-   */
-  protected FlagPole(Material material) {
-    super(material);
-  }
+    /**
+     * @param material
+     */
+    protected FlagPole(Material material) {
+        super(material);
+    }
 
 }

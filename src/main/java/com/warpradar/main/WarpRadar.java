@@ -7,10 +7,10 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.warpradar.registry.MainRegistry;
 
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.ModMetadata;
-import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Metadata;
+import cpw.mods.fml.common.ModMetadata;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -33,6 +33,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
 @Mod(modid = WarpRadar.MODID, name = WarpRadar.NAME, version = WarpRadar.VERSION, dependencies = "required-after:hbm")
 public class WarpRadar {
+
     public static String databaseUrl;
     public static final String MODID = "warpradar";
     public static final String NAME = "Warp Radar";
