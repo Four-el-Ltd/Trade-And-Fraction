@@ -41,7 +41,7 @@ public class CommonProxy {
             .toPath();
         WarpRadar.databaseUrl = "jbdc:sqlite:/" + path.toAbsolutePath()
             .normalize()
-            .toString() + "/warpradar.db";
+            .toString() + "/warpradar";
         if (!path.resolve("warpradar.db")
             .toFile()
             .isFile()) {
