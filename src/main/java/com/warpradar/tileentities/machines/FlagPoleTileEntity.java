@@ -6,14 +6,11 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 
 import com.hbm.tileentity.TileEntityLoadedBase;
-import com.warpradar.misc.db.entity.Faction;
 
 /**
  * FlagPole
  */
 public class FlagPoleTileEntity extends TileEntityLoadedBase {
-
-    private Faction owner;
 
     public FlagPoleTileEntity() {
         super();
@@ -37,24 +34,18 @@ public class FlagPoleTileEntity extends TileEntityLoadedBase {
         super.validate();
     }
 
-    public Faction getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Faction newOwner) {
-        owner = newOwner;
+    public void setOwner() {
         // TODO: НБТ!
     }
 
     @Override
     public void readFromNBT(NBTTagCompound nbt) {
-        // TODO Auto-generated method stub
+        // TODO НБТ!
         super.readFromNBT(nbt);
     }
 
     @Override
     public void writeToNBT(NBTTagCompound nbt) {
-        nbt.setLong("owner", owner.getId());
         super.writeToNBT(nbt);
     }
 

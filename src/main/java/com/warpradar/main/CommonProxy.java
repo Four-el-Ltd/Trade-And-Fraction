@@ -1,15 +1,5 @@
 package com.warpradar.main;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.sql.SQLException;
-
-import net.minecraftforge.common.DimensionManager;
-
-import com.j256.ormlite.support.ConnectionSource;
-import com.j256.ormlite.table.TableUtils;
-import com.warpradar.misc.db.entity.Faction;
-
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -36,24 +26,5 @@ public class CommonProxy {
 
     }
 
-    public void onServerStarting(FMLServerStartingEvent event) throws SQLException {
-        Path path = DimensionManager.getCurrentSaveRootDirectory()
-            .toPath();
-        WarpRadar.databaseUrl = "jdbc:sqlite:/" + path.toAbsolutePath()
-            .normalize()
-            .toString() + "/warpradar";
-        if (!path.resolve("warpradar.db")
-            .toFile()
-            .isFile()) {
-            try {
-                Files.createFile(path.resolve("warpradar.db"));
-            } catch (Exception e) {
-
-            }
-        }
-
-        ConnectionSource cSource = WarpRadar.getConnectionSource();
-        TableUtils.createTable(cSource, Faction.class);
-
-    }
+    public void onServerStarting(FMLServerStartingEvent event) {}
 }

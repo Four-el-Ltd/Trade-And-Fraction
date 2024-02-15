@@ -2,11 +2,6 @@ package com.warpradar.main;
 
 import java.sql.SQLException;
 
-import com.j256.ormlite.dao.Dao;
-import com.j256.ormlite.dao.DaoManager;
-import com.j256.ormlite.jdbc.JdbcConnectionSource;
-import com.j256.ormlite.support.ConnectionSource;
-import com.warpradar.misc.db.entity.Faction;
 import com.warpradar.registry.MainRegistry;
 
 import cpw.mods.fml.common.Mod;
@@ -74,27 +69,6 @@ public class WarpRadar {
     @EventHandler
     public void onServerStarting(FMLServerStartingEvent event) throws SQLException {
         proxy.onServerStarting(event);
-    }
-
-    public static ConnectionSource getConnectionSource() {
-        ConnectionSource cs;
-        try {
-            cs = new JdbcConnectionSource(databaseUrl);
-        } catch (SQLException e) {
-            throw new IllegalStateException("Товарищ шота не так");
-        }
-        return cs;
-    }
-
-    public static Dao<Faction, Long> getFactionDao(ConnectionSource cSource) {
-        Dao<Faction, Long> dao = null;
-        try {
-            dao = DaoManager.createDao(cSource, Faction.class);
-        } catch (Exception e) {
-
-        }
-
-        return dao;
     }
 
 }
