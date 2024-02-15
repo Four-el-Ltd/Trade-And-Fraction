@@ -1,17 +1,18 @@
 package com.warpradar.tileentities.machines;
 
-import com.hbm.tileentity.TileEntityLoadedBase;
-import com.warpradar.misc.db.entity.Faction;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 
+import com.hbm.tileentity.TileEntityLoadedBase;
+import com.warpradar.misc.db.entity.Faction;
+
 /**
  * FlagPole
  */
 public class FlagPoleTileEntity extends TileEntityLoadedBase {
+
     private Faction owner;
 
     public FlagPoleTileEntity() {
@@ -22,7 +23,7 @@ public class FlagPoleTileEntity extends TileEntityLoadedBase {
     public void updateEntity() {
         if (!canSeeSky()) {
             worldObj.getBlock(xCoord, yCoord, zCoord)
-                    .breakBlock(worldObj, xCoord, yCoord, zCoord, null, 0);
+                .breakBlock(worldObj, xCoord, yCoord, zCoord, null, 0);
         }
     }
 
@@ -66,7 +67,8 @@ public class FlagPoleTileEntity extends TileEntityLoadedBase {
             // TODO: клейм
         } else {
             if (world.isRemote) {
-                player.addChatMessage(new ChatComponentText(
+                player.addChatMessage(
+                    new ChatComponentText(
                         "Для клейма необходимо: Находится на расстоянии в как минимум двух блоков от флагштока по всем осям кроме высота(высота должна быть одинаковой)"));
             }
             // TODO: Игрок идет нахуй
