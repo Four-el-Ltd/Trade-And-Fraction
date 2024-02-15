@@ -2,13 +2,13 @@
 {
   "modid": "${modId}",
   "name": "${modName}",
-  "description": "Remake of the xRadar mod.",
+  "description": "Mod that adds a system of factions and trade.",
   "version": "${modVersion}",
   "mcversion": "1.7.10",
-  "url": "https://github.com/Ruslanllll/WarpRadar",
-  "updateUrl": "https://github.com/Ruslanllll/WarpRadar/releases",
-  "credits": "Ruslan (coder), Kir2100 (artist), MrKimkimora (Artist, coder)",
-  "logoFile": "assets/wradar/textures/logo.png",
+  "url": "https://github.com/Four-el-Ltd/Trade-And-Fraction",
+  "updateUrl": "https://github.com/Four-el-Ltd/Trade-And-Fraction/releases",
+  "credits": "HbMinecraft, Ruslan (coder), Kir2100 (artist), MrKimkimora (artist, coder), Vitya2127 (coder, atrist, contributor",
+  "logoFile": "assets/taf/textures/logo.png",
   "screenshots": [],
   "dependencies": []
 }
