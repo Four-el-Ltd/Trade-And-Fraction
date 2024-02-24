@@ -1,20 +1,9 @@
-# Внимание!!!
-*Мод находится в закрытом альфа тестировании.*
-
-*Так-же для работы требуется мод* **Nuclear Tech Mod**
-
-# Что такое Warp Radar
-Это ремейк мода **xRadar** от **HbmMods**.
-Так-же как и предыдущий мод, **Warp Radar** был сделан для определённого сервера.
-Мод будет выступать как средство совместимости модов из сборки сервера между собой для улучшения игрового процесса.
-Перечень модов, которые должны будут совмещаться в Warp-Radar: Electrical Age, MCHeli, NTM, Open Computers, Advanced Rocketry.
-
-## Что включает в себя данный мод?
-Данный мод включает в себя систему фракций, территорий, исследований и торговли меж игроков.
-В будущем должны появиться новые механизмы.
-
-## Могу ли я предложить идеи для мода?
-Временно нет, т.к мод находится в слишком ранней стадии разработки.
-
-## Могу ли я использовать мод для своего сервера?
-Да
+# Trade And Fraction Mod for Minecraft 1.7.10
+[TaF on ...](https://youtu.be/WUPakuHpqJQ?si=v1htYI6EV4ht_XWk)
+## Downloading pre-compiled versions from GitHub
+Simply navigate to "Releases" on the right side of the page, download links for the compiled JAR as well as the corresponding source code are under the "Assets" category below the changelog. Make sure to review all changelogs when updating! (This article is currently useless)
+## Building from source
+### Later....
+## Mod in alpha version!
+Yes, most of the xRadar content will be cut or remade. The faction system requires improvements and a global rewrite of the code. Just wait until we make the version playable.
+We also have our own [Discord Server](https://discord.com/invite/p46Vkmg7Ab), join us!
