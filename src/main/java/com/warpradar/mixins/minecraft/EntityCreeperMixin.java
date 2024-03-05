@@ -17,11 +17,8 @@ public abstract class EntityCreeperMixin extends EntityMob {
         super(world);
     }
 
-    @Shadow
-    protected abstract void func_146077_cc();
-
     @Inject(at = @At("RETURN"), method = "onDeath")
     protected void onKill(CallbackInfo ci) {
-        this.func_146077_cc();
+        this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, 16, true);
     }
 }
