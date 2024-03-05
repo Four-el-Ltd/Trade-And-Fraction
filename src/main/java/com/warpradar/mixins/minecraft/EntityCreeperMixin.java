@@ -18,7 +18,7 @@ public abstract class EntityCreeperMixin extends EntityCreeper {
     @Shadow
     protected abstract void func_146077_cc();
 
-    @Inject(at = @At("HEAD"), method = "onDeath")
+    @Inject(at = @At("RETURN"), method = "onDeath")
     protected void onKill(CallbackInfo ci) {
         this.func_146077_cc();
     }
