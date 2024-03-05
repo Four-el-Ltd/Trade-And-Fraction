@@ -2,6 +2,7 @@ package com.warpradar.main;
 
 import java.sql.SQLException;
 
+import com.warpradar.Tags;
 import com.warpradar.registry.MainRegistry;
 
 import cpw.mods.fml.common.Mod;
@@ -29,13 +30,12 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
  *
  */
 
-@Mod(modid = WarpRadar.MODID, name = WarpRadar.NAME, version = WarpRadar.VERSION, dependencies = "required-after:hbm")
+@Mod(modid = WarpRadar.MODID, name = WarpRadar.NAME, version = Tags.VERSION, dependencies = "required-after:hbm")
 public class WarpRadar {
 
     public static String databaseUrl;
     public static final String MODID = "warpradar";
     public static final String NAME = "Warp Radar";
-    public static final String VERSION = "0.0.2";
 
     @SidedProxy(clientSide = "com.warpradar.main.ClientProxy", serverSide = "com.warpradar.main.CommonProxy")
     public static CommonProxy proxy;
