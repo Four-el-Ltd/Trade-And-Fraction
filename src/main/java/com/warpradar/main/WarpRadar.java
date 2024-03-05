@@ -34,7 +34,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 public class WarpRadar {
 
     public static String databaseUrl;
-    public static final String MODID = "warpradar";
+    public static final String MODID = "taf";
     public static final String NAME = "Warp Radar";
 
     @SidedProxy(clientSide = "com.warpradar.main.ClientProxy", serverSide = "com.warpradar.main.CommonProxy")
