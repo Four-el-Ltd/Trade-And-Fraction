@@ -7,10 +7,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.world.World;
 
 @Mixin(EntityCreeper.class)
-public abstract class EntityCreeperMixin extends EntityCreeper {
+public abstract class EntityCreeperMixin extends EntityMob {
     EntityCreeperMixin(World world) {
         super(world);
     }
