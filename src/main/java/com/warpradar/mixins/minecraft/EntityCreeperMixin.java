@@ -21,6 +21,15 @@ public abstract class EntityCreeperMixin extends EntityMob {
     @Shadow
     private World worldObj;
 
+    @Shadow
+    private double posX;
+
+    @Shadow
+    private double posY;
+
+    @Shadow
+    private double posZ;
+
     @Inject(at = @At("HEAD"), method = "onDeath")
     protected void death(DamageSource damageSource, CallbackInfo ci) {
         this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, 16, true);
