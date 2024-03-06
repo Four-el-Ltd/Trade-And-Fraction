@@ -2,6 +2,7 @@ package com.warpradar.mixins.minecraft;
 
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,8 +21,8 @@ public abstract class EntityCreeperMixin extends EntityMob {
     @Shadow
     private World worldObj;
 
-    @Inject(at = @At("RETURN"), method = "onDeath")
-    protected void onKill(CallbackInfo ci) {
+    @Inject(at = @At("HEAD"), method = "onDeath")
+    protected void death(DamageSource damageSource, CallbackInfo ci) {
         this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, 16, true);
     }
 }
