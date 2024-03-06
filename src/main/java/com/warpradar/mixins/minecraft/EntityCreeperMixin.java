@@ -6,7 +6,6 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -17,18 +16,6 @@ public abstract class EntityCreeperMixin extends EntityMob {
     EntityCreeperMixin(World world) {
         super(world);
     }
-
-    @Shadow
-    private World worldObj;
-
-    @Shadow
-    private double posX;
-
-    @Shadow
-    private double posY;
-
-    @Shadow
-    private double posZ;
 
     @Inject(at = @At("HEAD"), method = "onDeath")
     protected void death(DamageSource damageSource, CallbackInfo ci) {
