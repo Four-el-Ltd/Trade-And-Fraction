@@ -35,7 +35,7 @@ public class WarpRadar {
 
     public static String databaseUrl;
     public static final String MODID = "taf";
-    public static final String NAME = "Warp Radar";
+    public static final String NAME = "Trade And Fraction";
 
     @SidedProxy(clientSide = "com.warpradar.main.ClientProxy", serverSide = "com.warpradar.main.CommonProxy")
     public static CommonProxy proxy;
