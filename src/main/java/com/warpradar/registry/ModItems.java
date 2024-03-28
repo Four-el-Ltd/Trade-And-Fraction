@@ -4,7 +4,6 @@ import net.minecraft.item.Item;
 
 import com.hbm.items.machine.ItemSatChip;
 import com.warpradar.items.food.ItemEnergy;
-import com.warpradar.items.tools.BedrockWand;
 import com.warpradar.main.WarpRadar;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -28,9 +27,6 @@ public class ModItems {
         sat_cumone = new ItemSatChip().setUnlocalizedName("sat_cumone")
             .setMaxStackSize(1)
             .setTextureName(WarpRadar.MODID + ":sat_cumone")
-            .setCreativeTab(MainRegistry.ItemsTab);
-        bedrock_wand = new BedrockWand().setUnlocalizedName("bedrock_wand")
-            .setMaxStackSize(1)
             .setCreativeTab(MainRegistry.ItemsTab);
     }
 
