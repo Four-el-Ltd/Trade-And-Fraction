@@ -13,7 +13,6 @@ public class ModItems {
     public static Item bottle_leninade;
     public static Item sat_luchik;
     public static Item sat_cumone;
-    public static Item bedrock_wand;
 
     public static void initializeItems() {
         bottle_leninade = new ItemEnergy().makeBottle(com.hbm.items.ModItems.bottle_empty, null)
@@ -35,7 +34,6 @@ public class ModItems {
         GameRegistry.registerItem(bottle_leninade, bottle_leninade.getUnlocalizedName());
         GameRegistry.registerItem(sat_luchik, sat_luchik.getUnlocalizedName());
         GameRegistry.registerItem(sat_cumone, sat_cumone.getUnlocalizedName());
-        GameRegistry.registerItem(bedrock_wand, bedrock_wand.getUnlocalizedName());
     }
 
 }
