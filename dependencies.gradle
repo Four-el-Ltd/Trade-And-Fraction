@@ -34,6 +34,6 @@
  * For more details, see https://docs.gradle.org/8.0.1/userguide/java_library_plugin.html#sec:java_library_configurations_graph
  */
 dependencies {
-    api files("libs/HBM-NTM-.1.0.27_X4880.jar")
+    api("com.github.HbmMods:Hbm-s-Nuclear-Tech-GIT:7be71df")
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:NotEnoughItems:2.5.4-GTNH:dev")
 }
