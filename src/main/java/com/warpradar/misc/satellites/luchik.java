@@ -9,7 +9,7 @@ import com.hbm.saveddata.satellites.Satellite;
 
 public class luchik extends Satellite {
 
-    public long lastOp;
+    public long lastOp = 0L;
 
     public luchik() {
         this.satIface = Interfaces.SAT_COORD;

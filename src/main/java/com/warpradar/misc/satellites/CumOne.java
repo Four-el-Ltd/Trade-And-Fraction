@@ -4,7 +4,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
 import com.hbm.entity.projectile.EntityMeteor;
-import com.hbm.handler.BossSpawnHandler;
 import com.hbm.saveddata.satellites.Satellite;
 
 public class CumOne extends Satellite {
@@ -19,7 +18,6 @@ public class CumOne extends Satellite {
             EntityMeteor meteor = new EntityMeteor(world);
             meteor.setPositionAndRotation(x, 384, z, 0, 0);
             world.spawnEntityInWorld(meteor);
-            BossSpawnHandler.spawnMeteorAtPlayer(player, false);
         }
     }
 }
