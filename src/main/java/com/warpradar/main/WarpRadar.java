@@ -1,5 +1,6 @@
 package com.warpradar.main;
 
+import java.io.File;
 import java.sql.SQLException;
 
 import com.warpradar.Tags;
@@ -36,6 +37,7 @@ public class WarpRadar {
     public static String databaseUrl;
     public static final String MODID = "taf";
     public static final String NAME = "Trade And Fraction";
+    public static File modConfigDir;
 
     @SidedProxy(clientSide = "com.warpradar.main.ClientProxy", serverSide = "com.warpradar.main.CommonProxy")
     public static CommonProxy proxy;
@@ -45,6 +47,8 @@ public class WarpRadar {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        modConfigDir = new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separatorChar + "TaFConfig");
+        if(!modConfigDir.exists()) modConfigDir.mkdir();
         proxy.preInit(event);
         MainRegistry.register();
         try {

@@ -14,6 +14,7 @@ import com.hbm.blocks.ILookOverlay;
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.items.machine.IItemFluidIdentifier;
 import com.hbm.util.I18nUtil;
+import com.warpradar.config.FluidConvertorConfig;
 import com.warpradar.registry.MainRegistry;
 import com.warpradar.tileentities.machines.TileEntityConverter;
 
@@ -56,7 +57,7 @@ public class BlockConverter extends BlockContainer implements ILookOverlay {
         TileEntity te = world.getTileEntity(x, y, z);
         TileEntityConverter tec = (TileEntityConverter) te;
         List<String> text = new ArrayList<>();
-        if (TileEntityConverter.FluidMap.get(tec.getAllTanks()[0].getTankType()) != null) {
+        if (FluidConvertorConfig.fluidMap.get(tec.getAllTanks()[0].getTankType()) != null) {
 
             text.add(
                 tec.getAllTanks()[0].getTankType()
