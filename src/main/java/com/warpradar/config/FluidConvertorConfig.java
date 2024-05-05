@@ -39,12 +39,7 @@ public class FluidConvertorConfig {
 
         try {
             FileWriter writer = new FileWriter(file);
-            recipes.forEach(r -> {
-                try {
-                    writer.write(gson.toJson(r));
-                } catch (IOException e) {
-                }
-            });
+            writer.write(gson.toJson(recipes));
             writer.flush();
             writer.close();
         } catch (Exception e) {
