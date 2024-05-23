@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
@@ -47,7 +48,7 @@ public class FluidConvertorConfig {
     }
     private static void readCustomConverterRecipes(){
         try{
-            FluidConverterRecipe[] recipes = gson.fromJson(new FileReader(file), FluidConverterRecipe[].class);
+            ArrayList<FluidConverterRecipe> recipes = gson.fromJson(new FileReader(file), new TypeToken<ArrayList<FluidConverterRecipe>>() {}.getType());
             for(FluidConverterRecipe recipe : recipes){
                 fluidMap.put(Fluids.fromName(recipe.hbm_name), FluidRegistry.getFluid(recipe.forge_name));
             }
