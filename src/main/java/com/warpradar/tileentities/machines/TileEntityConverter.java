@@ -13,6 +13,7 @@ import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.inventory.fluid.tank.FluidTank;
 import com.hbm.tileentity.TileEntityLoadedBase;
+import com.warpradar.config.FluidConvertorConfig;
 
 import api.hbm.fluid.IFluidStandardReceiver;
 
@@ -48,18 +49,18 @@ public class TileEntityConverter extends TileEntityLoadedBase implements IFluidS
     public void updateEntity() {
 
         if (!worldObj.isRemote && bobtank.getTankType() != Fluids.NONE) {
-            if (FluidMap.containsKey(bobtank.getTankType()) && forgetank.getFluidAmount() < forgetank.getCapacity()) {
+            if (FluidConvertorConfig.fluidMap.containsKey(bobtank.getTankType()) && forgetank.getFluidAmount() < forgetank.getCapacity()) {
                 if (forgetank.getFluid() == null) {
 
                 } else if (forgetank.getFluid()
-                    .getFluid() == FluidMap.get(bobtank.getTankType())) {
+                    .getFluid() == FluidConvertorConfig.fluidMap.get(bobtank.getTankType())) {
 
                     } else {
                         return;
                     }
                 int amount = Math.min(forgetank.getCapacity() - forgetank.getFluidAmount(), bobtank.getFill());
                 bobtank.setFill(bobtank.getFill() - amount);
-                FluidStack fluidStack = new FluidStack(FluidMap.get(bobtank.getTankType()), amount);
+                FluidStack fluidStack = new FluidStack(FluidConvertorConfig.fluidMap.get(bobtank.getTankType()), amount);
                 forgetank.fill(fluidStack, true);
             }
             this.subscribeToAllAround(bobtank.getTankType(), this);

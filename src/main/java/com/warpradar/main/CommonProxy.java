@@ -1,5 +1,7 @@
 package com.warpradar.main;
 
+import com.warpradar.config.FluidConvertorConfig;
+
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -19,7 +21,7 @@ public class CommonProxy {
     }
 
     public void init(FMLInitializationEvent event) {
-
+        FluidConvertorConfig.initialize();
     }
 
     public void postInit(FMLPostInitializationEvent event) {

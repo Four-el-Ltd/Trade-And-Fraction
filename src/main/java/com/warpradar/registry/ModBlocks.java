@@ -5,6 +5,7 @@ import net.minecraft.block.material.Material;
 
 import com.hbm.blocks.generic.BlockGeneric;
 import com.warpradar.blocks.machines.BlockConverter;
+import com.warpradar.blocks.misc.MetastableUraniumBlock;
 import com.warpradar.main.WarpRadar;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -13,6 +14,7 @@ public class ModBlocks {
 
     public static Block converter;
     public static Block concrete_brick_legacy;
+    public static Block metastable_uranium_block;
 
     public static void initializeBlocks() {
         converter = new BlockConverter(Material.iron).setBlockName("converter")
@@ -21,6 +23,7 @@ public class ModBlocks {
         concrete_brick_legacy = new BlockGeneric(Material.iron).setBlockName("concrete_brick_legacy")
             .setBlockTextureName(WarpRadar.MODID + ":concrete_brick_legacy")
             .setCreativeTab(MainRegistry.BlocksTab);
+        metastable_uranium_block = new MetastableUraniumBlock().setBlockName("pizdec_block").setBlockTextureName(WarpRadar.MODID + ":metastable_block");
 
     }
 
@@ -28,5 +31,6 @@ public class ModBlocks {
         initializeBlocks();
         GameRegistry.registerBlock(converter, converter.getUnlocalizedName());
         GameRegistry.registerBlock(concrete_brick_legacy, concrete_brick_legacy.getUnlocalizedName());
+        GameRegistry.registerBlock(metastable_uranium_block, metastable_uranium_block.getUnlocalizedName());
     }
 }
