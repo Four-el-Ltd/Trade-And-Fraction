@@ -12,13 +12,13 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModBlocks {
 
-    public static Block converter;
+    public static Block fluid_converter;
     public static Block concrete_brick_legacy;
     public static Block block_u238m2;
 
     public static void initializeBlocks() {
-        converter = new BlockConverter(Material.iron).setBlockName("converter")
-            .setBlockTextureName(WarpRadar.MODID + ":converter")
+        fluid_converter = new BlockConverter(Material.iron).setBlockName("fluid_converter")
+            .setBlockTextureName(WarpRadar.MODID + ":fluid_converter")
             .setCreativeTab(MainRegistry.BlocksTab);
         concrete_brick_legacy = new BlockGeneric(Material.iron).setBlockName("concrete_brick_legacy")
             .setBlockTextureName(WarpRadar.MODID + ":concrete_brick_legacy")
