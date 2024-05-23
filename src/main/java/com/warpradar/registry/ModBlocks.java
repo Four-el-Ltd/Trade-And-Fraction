@@ -29,7 +29,7 @@ public class ModBlocks {
 
     public static void registerBlocks() {
         initializeBlocks();
-        GameRegistry.registerBlock(converter, converter.getUnlocalizedName());
+        GameRegistry.registerBlock(fluid_converter, fluid_converter.getUnlocalizedName());
         GameRegistry.registerBlock(concrete_brick_legacy, concrete_brick_legacy.getUnlocalizedName());
         GameRegistry.registerBlock(block_u238m2, block_u238m2.getUnlocalizedName());
     }
