@@ -1,17 +1,17 @@
-// переведено Vitya2127
-
-// Groups
-itemGroup.warpradar.BlocksTab=Блоки Warp Radar
-itemGroup.warpradar.itemsTab=Предметы Warp Radar
+itemGroup.taf.BlocksTab=Блоки TaF
+itemGroup.taf.itemsTab=Предметы TaF
 
 // Items
 item.sat_luchik.name=Экспериментальный спутник "Лучик"
 item.bottle_leninade.name=Ленинад
 
 // Descs
-item.bottle_leninade.desc=Вкус советского производства
+item.bottle_leninade.desc=Вкус советской промышленности
 
 // Tiles
+tile.concrete_brick_legacy.name=Мелкие бетонные кирпичи
+tile.fluid_converter.name=Жидкостный конвертер
+tile.fluid_converter.text=Жидкостный конвертер
 
 // Containers
 
