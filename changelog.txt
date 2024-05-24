@@ -1,0 +1,14 @@
+## Added
+* Block Metastable Uranium 238-2
+ * Damn explosive
+ * Beautiful texture
+ * An unforgettable effect
+ * I'm not sure he can explode at all
+
+## Changed
+* Updated Russian and English translations
+* Changed old item textures to new ones
+
+## Fixed
+* Fixed display of the full name of the mod
+ * Instead of TaF now Trade And Fraction
