@@ -1,7 +1,5 @@
-
-// Groups
-itemGroup.warpradar.BlocksTab=Blocks Warp Radar
-itemGroup.warpradar.itemsTab=Items Warp Radar
+itemGroup.taf.BlocksTab=Blocks TaF
+itemGroup.taf.itemsTab=Items TaF
 
 // Items
 item.sat_luchik.name=Experimental satellite "Luchik"
@@ -11,6 +9,9 @@ item.bottle_leninade.name=Leninade
 item.bottle_leninade.desc=Taste of Soviet production
 
 // Tiles
+tile.concrete_brick_legacy.name=Small Concrete Bricks
+tile.fluid_converter.name=Fluid Converter
+tile.fluid_converter.text=Fluid Converter
 
 // Containers
 
