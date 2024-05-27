@@ -56,6 +56,6 @@ public class MainRegistry {
     public static void regTabs() {
         BlocksTab = new Tab(Items.diamond_horse_armor, TaF.MODID + "BlocksTab");
         ItemsTab = new Tab(ModItems.bottle_leninade, TaF.MODID + "ItemsTab");
-        WeaponsTab = new Tab(Items.diamond_horse_armor, TaF.MODID + "BlocksTab");
+        WeaponsTab = new Tab(Items.diamond_horse_armor, TaF.MODID + "WeaponsTab");
     }
 }
